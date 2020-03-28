@@ -1,0 +1,261 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>线段树 - Segment Tree | 蒟蒻的栖息地</title>
+<link rel="shortcut icon" href="https://553032651yyj.github.io/favicon.ico?v=1585365524008">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://553032651yyj.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="线段树 - Segment Tree | 蒟蒻的栖息地 - Atom Feed" href="https://553032651yyj.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="
+概述
+线段树是算法竞赛中常用的用来维护 区间信息 的数据结构。
+线段树可以在 O(logn)\mathcal{O(logn)}O(logn) 的时间复杂度内实现单点修改、区间修改、区间查询（区间求和，求区间最大值，求区间最小值）等操作。
+..." />
+    <meta name="keywords" content="算法,学习" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://553032651yyj.github.io">
+  <img class="avatar" src="https://553032651yyj.github.io/images/avatar.png?v=1585365524008" alt="">
+  </a>
+  <h1 class="site-title">
+    蒟蒻的栖息地
+  </h1>
+  <p class="site-description">
+    菜鸡
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="https://www.luogu.com.cn/user/205821" class="menu">
+          洛谷主页
+        </a>
+      
+    
+      
+        <a href="https://www.luogu.com.cn/blog/2018psxtdjryyj/" class="menu">
+          洛谷博客
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              线段树 - Segment Tree
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-03-28
+              </span>
+              <span>
+                4 min read
+              </span>
+              
+                <a href="https://553032651yyj.github.io/tag/7C9067bQk/" class="post-tag">
+                  # 算法
+                </a>
+              
+                <a href="https://553032651yyj.github.io/tag/tC9uWz5ouR/" class="post-tag">
+                  # 学习
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <!-- more -->
+<h3 id="概述">概述</h3>
+<p>线段树是算法竞赛中常用的用来维护 <strong>区间信息</strong> 的数据结构。</p>
+<p>线段树可以在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="script">O</mi><mo>(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{O(logn)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></span> 的时间复杂度内实现单点修改、区间修改、区间查询（区间求和，求区间最大值，求区间最小值）等操作。</p>
+<p>线段树维护的信息，需要满足可加性，即能以可以接受的速度合并信息和修改信息，包括在使用懒惰标记时，标记也要满足可加性（例如取模就不满足可加性，对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span> 取模然后对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 取模，两个操作就不能合并在一起做）。</p>
+<h3 id="建树过程">建树过程</h3>
+<pre><code class="language-cpp">void build(int s, int t, int p) { //对[s,t]区间,标号第p号结点
+  if (s == t) {
+     d[p] = a[s]; //叶结点
+     return;
+  }
+  int m = (s + t) / 2;  //中值
+  build(s, m, p * 2);
+  build(m + 1, t, p * 2 + 1);
+  d[p] = d[p * 2] + d[(p * 2) + 1]; //值的计算
+}
+</code></pre>
+<p>数组的最大范围为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mrow><mo>⌈</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo>⌉</mo><mo>+</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">2^{\lceil log n\rceil+1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8879999999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">⌈</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight">o</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">g</span><span class="mord mathdefault mtight">n</span><span class="mclose mtight">⌉</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p>数组开到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn><mi>n</mi><mo>−</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">4n-5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">4</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span> 即可。</p>
+<h3 id="查询过程不存在修改">查询过程（不存在修改）</h3>
+<pre><code class="language-cpp">int getsum(int l, int r, int s, int t, int p) {
+  if (l &lt;= s &amp;&amp; t &lt;= r) return d[p];    //表示[s,t]∈[l,r]
+  int m = (s + t) / 2, sum = 0; //m中值
+  if (l &lt;= m) sum += getsum(l, r, s, m, p * 2); //寻找左子树
+  if (r &gt; m) sum += getsum(l, r, m + 1, t, p * 2 + 1); //寻找右子树
+  return sum;
+}
+</code></pre>
+<h3 id="区间修改">区间修改</h3>
+<pre><code class="language-cpp">void update(int l, int r, int c, int s, int t, int p) {
+  if (l &lt;= s &amp;&amp; t &lt;= r) {  //表示[s,t]∈[l,r]
+    d[p] += (t - s + 1) * c, b[p] += c ;
+    return;
+  } 
+  //b[p]表示一个标记，表示当修改时，先将子节点的改动值存贮在父结点，等到查询的时候再赋予
+  int m = (s + t) / 2;
+  if (b[p] &amp;&amp; s != t) {
+    d[p * 2] += b[p] * (m - s + 1), d[p * 2 + 1] += b[p] * (t - m);
+    b[p * 2] += b[p], b[p * 2 + 1] += b[p]; 
+    b[p] = 0;                              
+  }
+  if (l &lt;= m) update(l, r, c, s, m, p * 2); //寻找左子树
+  if (r &gt; m) update(l, r, c, m + 1, t, p * 2 + 1); //寻找右子树
+  d[p] = d[p * 2] + d[p * 2 + 1];
+}
+</code></pre>
+<h3 id="查询过程存在修改">查询过程（存在修改）</h3>
+<pre><code class="language-cpp">int getsum(int l, int r, int s, int t, int p) {
+  if (l &lt;= s &amp;&amp; t &lt;= r) return d[p];
+  int m = (s + t) / 2;
+  if (b[p]) {
+    d[p * 2] += b[p] * (m - s + 1), d[p * 2 + 1] += b[p] * (t - m),
+        b[p * 2] += b[p], b[p * 2 + 1] += b[p]; 
+    b[p] = 0;                               
+  }
+  int sum = 0;
+  if (l &lt;= m) sum += getsum(l, r, s, m, p * 2);
+  if (r &gt; m) sum += getsum(l, r, m + 1, t, p * 2 + 1);
+  return sum;
+}
+</code></pre>
+<h3 id="reference">Reference</h3>
+<p>OI-wiki - 线段树</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E6%A6%82%E8%BF%B0">概述</a></li>
+<li><a href="#%E5%BB%BA%E6%A0%91%E8%BF%87%E7%A8%8B">建树过程</a></li>
+<li><a href="#%E6%9F%A5%E8%AF%A2%E8%BF%87%E7%A8%8B%E4%B8%8D%E5%AD%98%E5%9C%A8%E4%BF%AE%E6%94%B9">查询过程（不存在修改）</a></li>
+<li><a href="#%E5%8C%BA%E9%97%B4%E4%BF%AE%E6%94%B9">区间修改</a></li>
+<li><a href="#%E6%9F%A5%E8%AF%A2%E8%BF%87%E7%A8%8B%E5%AD%98%E5%9C%A8%E4%BF%AE%E6%94%B9">查询过程（存在修改）</a></li>
+<li><a href="#reference">Reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://553032651yyj.github.io/post/Union-find Sets/">
+              <h3 class="post-title">
+                并查集 - Union-find Sets
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Author:<a href="https://www.luogu.com.cn/user/205821" target="_blank">553032651yyj</a>
+  <a class="rss" href="https://553032651yyj.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

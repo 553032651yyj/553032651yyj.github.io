@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://553032651yyj.github.io</id>
     <title>蒟蒻的栖息地</title>
-    <updated>2020-03-28T03:09:20.446Z</updated>
+    <updated>2020-03-28T03:18:48.390Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://553032651yyj.github.io"/>
     <link rel="self" href="https://553032651yyj.github.io/atom.xml"/>
@@ -10,6 +10,130 @@
     <logo>https://553032651yyj.github.io/images/avatar.png</logo>
     <icon>https://553032651yyj.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 蒟蒻的栖息地</rights>
+    <entry>
+        <title type="html"><![CDATA[线段树 - Segment Tree]]></title>
+        <id>https://553032651yyj.github.io/post/Segment - Tree/</id>
+        <link href="https://553032651yyj.github.io/post/Segment - Tree/">
+        </link>
+        <updated>2020-03-28T03:15:30.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<h3 id="概述">概述</h3>
+<p>线段树是算法竞赛中常用的用来维护 <strong>区间信息</strong> 的数据结构。</p>
+<p>线段树可以在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="script">O</mi><mo>(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{O(logn)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></span> 的时间复杂度内实现单点修改、区间修改、区间查询（区间求和，求区间最大值，求区间最小值）等操作。</p>
+<p>线段树维护的信息，需要满足可加性，即能以可以接受的速度合并信息和修改信息，包括在使用懒惰标记时，标记也要满足可加性（例如取模就不满足可加性，对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span> 取模然后对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 取模，两个操作就不能合并在一起做）。</p>
+<h3 id="建树过程">建树过程</h3>
+<pre><code class="language-cpp">void build(int s, int t, int p) { //对[s,t]区间,标号第p号结点
+  if (s == t) {
+     d[p] = a[s]; //叶结点
+     return;
+  }
+  int m = (s + t) / 2;  //中值
+  build(s, m, p * 2);
+  build(m + 1, t, p * 2 + 1);
+  d[p] = d[p * 2] + d[(p * 2) + 1]; //值的计算
+}
+</code></pre>
+<p>数组的最大范围为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mrow><mo>⌈</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo>⌉</mo><mo>+</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">2^{\lceil log n\rceil+1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8879999999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">⌈</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight">o</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">g</span><span class="mord mathdefault mtight">n</span><span class="mclose mtight">⌉</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p>数组开到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn><mi>n</mi><mo>−</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">4n-5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">4</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span> 即可。</p>
+<h3 id="查询过程不存在修改">查询过程（不存在修改）</h3>
+<pre><code class="language-cpp">int getsum(int l, int r, int s, int t, int p) {
+  if (l &lt;= s &amp;&amp; t &lt;= r) return d[p];    //表示[s,t]∈[l,r]
+  int m = (s + t) / 2, sum = 0; //m中值
+  if (l &lt;= m) sum += getsum(l, r, s, m, p * 2); //寻找左子树
+  if (r &gt; m) sum += getsum(l, r, m + 1, t, p * 2 + 1); //寻找右子树
+  return sum;
+}
+</code></pre>
+<h3 id="区间修改">区间修改</h3>
+<pre><code class="language-cpp">void update(int l, int r, int c, int s, int t, int p) {
+  if (l &lt;= s &amp;&amp; t &lt;= r) {  //表示[s,t]∈[l,r]
+    d[p] += (t - s + 1) * c, b[p] += c ;
+    return;
+  } 
+  //b[p]表示一个标记，表示当修改时，先将子节点的改动值存贮在父结点，等到查询的时候再赋予
+  int m = (s + t) / 2;
+  if (b[p] &amp;&amp; s != t) {
+    d[p * 2] += b[p] * (m - s + 1), d[p * 2 + 1] += b[p] * (t - m);
+    b[p * 2] += b[p], b[p * 2 + 1] += b[p]; 
+    b[p] = 0;                              
+  }
+  if (l &lt;= m) update(l, r, c, s, m, p * 2); //寻找左子树
+  if (r &gt; m) update(l, r, c, m + 1, t, p * 2 + 1); //寻找右子树
+  d[p] = d[p * 2] + d[p * 2 + 1];
+}
+</code></pre>
+<h3 id="查询过程存在修改">查询过程（存在修改）</h3>
+<pre><code class="language-cpp">int getsum(int l, int r, int s, int t, int p) {
+  if (l &lt;= s &amp;&amp; t &lt;= r) return d[p];
+  int m = (s + t) / 2;
+  if (b[p]) {
+    d[p * 2] += b[p] * (m - s + 1), d[p * 2 + 1] += b[p] * (t - m),
+        b[p * 2] += b[p], b[p * 2 + 1] += b[p]; 
+    b[p] = 0;                               
+  }
+  int sum = 0;
+  if (l &lt;= m) sum += getsum(l, r, s, m, p * 2);
+  if (r &gt; m) sum += getsum(l, r, m + 1, t, p * 2 + 1);
+  return sum;
+}
+</code></pre>
+<h3 id="reference">Reference</h3>
+<p>OI-wiki - 线段树</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[并查集 - Union-find Sets]]></title>
+        <id>https://553032651yyj.github.io/post/Union-find Sets/</id>
+        <link href="https://553032651yyj.github.io/post/Union-find Sets/">
+        </link>
+        <updated>2020-03-28T03:12:46.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<h3 id="概述">概述</h3>
+<p>并查集是一种树形的数据结构，顾名思义，它用于处理一些不交集的 合并 及 查询 问题。 它支持两种操作：</p>
+<ul>
+<li>
+<p>查找（Find）：确定某个元素处于哪个子集；</p>
+</li>
+<li>
+<p>合并（Union）：将两个子集合并成一个集合。</p>
+</li>
+</ul>
+<h3 id="reset">reset</h3>
+<pre><code class="language-cpp">void makeSet(int size) {
+  for (int i = 0; i &lt; size; i++) fa[i] = i; 
+  return;
+}
+</code></pre>
+<p><code>fa[i]=i</code> 表示 <code>i的父结点为fa[i]</code></p>
+<h3 id="find">find</h3>
+<pre><code class="language-cpp">int find(int x) { 
+  if(fa[x]==x) return x;
+  else return find(fa[x]);  
+}
+</code></pre>
+<p><code>如果fa[x]==x，则表示找到，返回</code></p>
+<p>反之，询问<code>fa[fa[x]]</code></p>
+<p>这是找祖先的过程。</p>
+<h3 id="union">union</h3>
+<pre><code class="language-cpp">void union(int x, int y) {
+  x = find(x);
+  y = find(y);
+  if (x == y) return; 
+  fa[x] = y;
+}
+</code></pre>
+<p><code>如果为同一个祖先，不用合并</code></p>
+<p><code>否则合并。</code></p>
+<h3 id="题目">题目</h3>
+<p><a href="https://www.luogu.com.cn/problem/P3367">P3367-模板-并查集</a> AC</p>
+<p><a href="https://www.luogu.com.cn/problem/P1551">P1551-亲戚</a> AC</p>
+<p><a href="https://www.luogu.com.cn/problem/P6121">P6121-[USACO16OPEN]Closing the Farm G</a> -</p>
+<p><a href="https://www.luogu.com.cn/problem/P3144">P3144-[USACO16OPEN]Closing the Farm S</a> -</p>
+<hr>
+<p>引用:</p>
+<p>OI-wiki-并查集</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[「ECC Round 1」赛后题解 - 「Everyday Chat Contest Round 1」Solutions]]></title>
         <id>https://553032651yyj.github.io/post/everyday-chat-contest-round-1-solutions/</id>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://553032651yyj.github.io</id>
     <title>蒟蒻的栖息地</title>
-    <updated>2020-03-31T08:54:07.217Z</updated>
+    <updated>2020-03-31T08:59:09.735Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://553032651yyj.github.io"/>
     <link rel="self" href="https://553032651yyj.github.io/atom.xml"/>
@@ -50,16 +50,6 @@
 <p><strong>本题数据较水，会加强</strong></p>
 <hr>
 <h4 id="t121990-论炎宿朱雀的坑爹性"><a href="https://www.luogu.com.cn/problem/T121990">T121990 论炎宿·朱雀的坑爹性</a></h4>
-<p>作者：ScdH</p>
-<p>错误修改：</p>
-<p>第一处：题目描述，第四行，<code>a</code> 改为 <code>$a$</code>；<code>b</code> 改为 <code>$b$</code>；<code>n</code> 改为 <code>$n$</code>；<code>m</code> 改为 <code>$m$</code>；<code>k</code> 改为 <code>$k$</code>。</p>
-<p>第二处：输入格式，第一行，<code>a，b，k</code> 改为 <code>$a,b,k$</code>。</p>
-<p>第三处：输入格式，第二行，<code>二~a+2</code> 改为 <code>$2$~$a+2$</code></p>
-<p>第四处：输入格式，第三行，<code>a+3~a+4</code> 改为 <code>$a+3$~$a+4$</code>；<code>m</code> 改为 <code>$m$</code>；<code>n</code> 改为 <code>$n$</code>。</p>
-<p>第五处：输出格式，第一行，<code>“I died”</code> 改为 <code>I died</code>。</p>
-<p>第六处：输出格式，第二行，<code>“It's very useful”</code> 改为 <code>It's very useful</code>。</p>
-<p><strong>本题无数据，之后会添加。</strong></p>
-<h4 id="t121990-论炎宿朱雀的坑爹性-2"><a href="https://www.luogu.com.cn/problem/T121990">T121990 论炎宿·朱雀的坑爹性</a></h4>
 <p>作者：ScdH</p>
 <p>错误修改：</p>
 <p>第一处：题目描述，第四行，<code>a</code> 改为 <code>$a$</code>；<code>b</code> 改为 <code>$b$</code>；<code>n</code> 改为 <code>$n$</code>；<code>m</code> 改为 <code>$m$</code>；<code>k</code> 改为 <code>$k$</code>。</p>

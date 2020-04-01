@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://553032651yyj.github.io</id>
     <title>蒟蒻的栖息地</title>
-    <updated>2020-03-31T08:59:09.735Z</updated>
+    <updated>2020-04-01T04:21:07.249Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://553032651yyj.github.io"/>
     <link rel="self" href="https://553032651yyj.github.io/atom.xml"/>
@@ -60,6 +60,42 @@
 <p>第六处：输出格式，第二行，<code>“It's very useful”</code> 改为 <code>It's very useful</code>。</p>
 <p>第七处：提示与说明，第一行，<code>‘0’</code>改为<code>0</code>，<code>‘1’</code>改为 <code>1</code>。</p>
 <p><strong>本题无数据，之后会添加。</strong></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[「小 Y 的水题大赛」赛后题解]]></title>
+        <id>https://553032651yyj.github.io/post/Water-Comtest-Solution/</id>
+        <link href="https://553032651yyj.github.io/post/Water-Comtest-Solution/">
+        </link>
+        <updated>2020-03-30T07:17:33.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="t1比大小">「T1」比大小</h3>
+<p>直接前缀和即可。代码不贴。</p>
+<h3 id="t2锟斤拷">「T2」锟斤拷</h3>
+<p>深搜加模拟，对每种情况都判断一次，时限很足。<s>代码没写</s>代码不贴。</p>
+<h3 id="t3a-b">「T3」A-B</h3>
+<p>分两种情况。</p>
+<p>第一种，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n%2=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>，则有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>=</mo><mn>2</mn><mi>n</mi></mrow><annotation encoding="application/x-tex">a=2n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord mathdefault">n</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mo>=</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">b=n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>。由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi mathvariant="normal">∣</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">2|n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mord">∣</span><span class="mord mathdefault">n</span></span></span></span>，则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>π</mi><mo>(</mo><mn>2</mn><mi>n</mi><mo>)</mo><mo>=</mo><mi>π</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\pi(2n)=\pi(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span><span class="mopen">(</span><span class="mord">2</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>.</p>
+<p>第二种，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n%2=1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>，则找到最小的奇质数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span></span></span></span>，则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>=</mo><mi>p</mi><mi>n</mi><mo separator="true">,</mo><mi>b</mi><mo>=</mo><mo>(</mo><mi>p</mi><mo>−</mo><mn>1</mn><mo>)</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">a=pn,b=(p-1)n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">p</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mord mathdefault">n</span></span></span></span>。</p>
+<p>代码：</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int n,p;
+bool primes[10000001];
+int main(){
+	cin&gt;&gt;n;
+	if(n%2==0) cout&lt;&lt;2*n&lt;&lt;' '&lt;&lt;n;
+	else{
+    	for(int i=2;i&lt;=sqrt(n);i++) for(int j=2;i*j&lt;=n;j++) primes[i*j]=true;
+		for(int i=2;i&lt;=n;i++){
+			if(!primes[i] &amp;&amp; i%2 &amp;&amp; n%i!=0) {
+		    	p=i;
+	    		break;
+	    	}
+		}
+		cout&lt;&lt;p*n&lt;&lt;' '&lt;&lt;(p-1)*n;
+	}
+} 
+</code></pre>
 ]]></content>
     </entry>
     <entry>

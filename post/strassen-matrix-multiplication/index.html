@@ -1,114 +1,116 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
-
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>斯特拉森矩阵乘法 - Strassen Matrix Multiplication | 蒟蒻的栖息地</title>
-<meta name="description" content="菜鸡">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://553032651yyj.github.io/favicon.ico?v=1585885591754">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://553032651yyj.github.io/favicon.ico?v=1585887657584">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://553032651yyj.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="斯特拉森矩阵乘法 - Strassen Matrix Multiplication | 蒟蒻的栖息地 - Atom Feed" href="https://553032651yyj.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-
+    <meta name="description" content="
+前言
+本人蒟蒻，所以讲述的可能不是很恰当。如果有讲的不好的，欢迎指出。
+矩阵乘法的定义
+对于两个矩阵  A[a1,1⋯a1,n⋮⋱⋮am,1⋯an,m]A\begin{bmatrix}a_{1,1}&amp;\cdots&amp;a_{1..." />
+    <meta name="keywords" content="算法,学习,授课型" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
   <body>
-  
-    <nav class="navbar border fixed split-nav">
-  <div class="nav-brand">
-    <h3><a href="https://553032651yyj.github.io">蒟蒻的栖息地</a></h3>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://553032651yyj.github.io">
+  <img class="avatar" src="https://553032651yyj.github.io/images/avatar.png?v=1585887657584" alt="">
+  </a>
+  <h1 class="site-title">
+    蒟蒻的栖息地
+  </h1>
+  <p class="site-description">
+    菜鸡
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="https://www.luogu.com.cn/user/205821" class="menu">
+          洛谷主页
+        </a>
+      
+    
+      
+        <a href="https://www.luogu.com.cn/blog/2018psxtdjryyj/" class="menu">
+          洛谷博客
+        </a>
+      
+    
   </div>
-  <div class="collapsible">
-    <input id="collapsible1" type="checkbox" name="collapsible1">
-    <button>
-      <label for="collapsible1">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </label>
-    </button>
-    <div class="collapsible-body">
-      <ul class="inline">
-        
-          <li>
-            
-              <a href="/" class="menu">
-                首页
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/archives" class="menu">
-                归档
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/tags" class="menu">
-                标签
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="https://www.luogu.com.cn/user/205821" class="menu">
-                洛谷主页
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="https://www.luogu.com.cn/blog/2018psxtdjryyj/" class="menu">
-                洛谷博客
-              </a>
-            
-          </li>
-        
-      </ul>
-    </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
   </div>
-</nav>
+</div>
 
-    <div id="top" class="row site">
-      <div class="sm-12 md-8 col">
-        <div class="paper">
-          <article class="article">
-            <h1>斯特拉森矩阵乘法 - Strassen Matrix Multiplication</h1>
-            <p class="article-meta">
-              2020-03-27
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              斯特拉森矩阵乘法 - Strassen Matrix Multiplication
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-03-27
+              </span>
+              <span>
+                12 min read
+              </span>
               
-                <a href="https://553032651yyj.github.io/tag/7C9067bQk/" class="badge warning">
-                  算法
+                <a href="https://553032651yyj.github.io/tag/7C9067bQk/" class="post-tag">
+                  # 算法
                 </a>
               
-                <a href="https://553032651yyj.github.io/tag/tC9uWz5ouR/" class="badge warning">
-                  学习
+                <a href="https://553032651yyj.github.io/tag/tC9uWz5ouR/" class="post-tag">
+                  # 学习
                 </a>
               
-                <a href="https://553032651yyj.github.io/tag/67bPKVK-qr/" class="badge ">
-                  授课型
+                <a href="https://553032651yyj.github.io/tag/67bPKVK-qr/" class="post-tag">
+                  # 授课型
                 </a>
               
-            </p>
+            </div>
             
-            <div class="post-content">
-              <!-- more -->
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <!-- more -->
 <h3 id="前言">前言</h3>
 <p>本人蒟蒻，所以讲述的可能不是很恰当。如果有讲的不好的，欢迎指出。</p>
 <h3 id="矩阵乘法的定义">矩阵乘法的定义</h3>
@@ -179,131 +181,83 @@ square-matrix(A,B){     //A,B 为两个矩阵
 <p>算法导论，第三版，4.5，用主方法求解递归式，Thomas H.Cormen 等。</p>
 <p>算法导论，第三版，D.1，矩阵和矩阵运算，Thomas H.Cormen 等。</p>
 
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
+<li><a href="#%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95%E7%9A%84%E5%AE%9A%E4%B9%89">矩阵乘法的定义</a></li>
+<li><a href="#strassen-%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95">Strassen 矩阵乘法</a></li>
+<li><a href="#strassen-%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95%E7%9A%84%E6%AD%A5%E9%AA%A4">Strassen 矩阵乘法的步骤</a></li>
+<li><a href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E7%9A%84%E8%AF%81%E6%98%8E">时间复杂度的证明</a></li>
+<li><a href="#reference">Reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
             </div>
           </article>
         </div>
-        <div class="paper" data-aos="fade-in">
-          
-        </div>
-        
-      </div>
 
-      <div class="sm-12 md-4 col sidebar">
-  <div class="paper info-container">
-    <img src="https://553032651yyj.github.io/images/avatar.png?v=1585885591754" class="no-responsive avatar">
-    <div class="text-muted">菜鸡</div>
-    <div class="social-container">
-      
         
-      
+
         
-      
-        
-      
-        
-      
-        
-      
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      最新文章
-    </div>
-    <div class="row">
-      <ul>
-        
-          
-            <li>
-              <a href="https://553032651yyj.github.io/post/xslm-correct-problems/">XSLM 团队 题目修改情况</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://553032651yyj.github.io/post/Water-Comtest-Solution/">「小 Y 的水题大赛」赛后题解</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://553032651yyj.github.io/post/Segment - Tree/">线段树 - Segment Tree</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://553032651yyj.github.io/post/Union-find Sets/">并查集 - Union-find Sets</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://553032651yyj.github.io/post/everyday-chat-contest-round-1-solutions/">「ECC Round 1」赛后题解 - 「Everyday Chat Contest Round 1」Solutions</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://553032651yyj.github.io/post/strassen-matrix-multiplication/">斯特拉森矩阵乘法 - Strassen Matrix Multiplication</a>
-            </li>
-          
-        
-      </ul>
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      标签列表
-    </div>
-    <div class="row">
-      
-        <a href="https://553032651yyj.github.io/tag/4YjRn977BI/" class="badge success">
-          团队
-        </a>
-      
-        <a href="https://553032651yyj.github.io/tag/igxBRMkb2/" class="badge secondary">
-          比赛
-        </a>
-      
-        <a href="https://553032651yyj.github.io/tag/-gCu9zI6uD/" class="badge warning">
-          题解
-        </a>
-      
-        <a href="https://553032651yyj.github.io/tag/7C9067bQk/" class="badge success">
-          算法
-        </a>
-      
-        <a href="https://553032651yyj.github.io/tag/tC9uWz5ouR/" class="badge secondary">
-          学习
-        </a>
-      
-        <a href="https://553032651yyj.github.io/tag/67bPKVK-qr/" class="badge secondary">
-          授课型
-        </a>
-      
-    </div>
-  </div>
-  <div class="paper">
-    Author:<a href="https://www.luogu.com.cn/user/205821" target="_blank">553032651yyj</a> | <a class="rss" href="https://553032651yyj.github.io/atom.xml" target="_blank">RSS</a>
-  </div>
+
+        <div class="site-footer">
+  Author:<a href="https://www.luogu.com.cn/user/205821" target="_blank">553032651yyj</a>
+  <a class="rss" href="https://553032651yyj.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
 </div>
 
-
+      </div>
     </div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad()
 
-<script type="application/javascript">
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
 
-AOS.init();
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
 
-hljs.initHighlightingOnLoad()
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
 
-</script>
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
 
-
-
-
+    </script>
   </body>
 </html>

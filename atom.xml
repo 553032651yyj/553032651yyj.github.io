@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://553032651yyj.github.io</id>
     <title>蒟蒻的栖息地</title>
-    <updated>2020-04-03T04:22:12.472Z</updated>
+    <updated>2020-04-04T04:38:27.108Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://553032651yyj.github.io"/>
     <link rel="self" href="https://553032651yyj.github.io/atom.xml"/>
@@ -16,8 +16,7 @@
         <link href="https://553032651yyj.github.io/post/xslm-correct-problems/">
         </link>
         <updated>2020-03-31T01:16:24.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="xslm官方团队-题面修改情况">XSLM官方团队 题面修改情况</h3>
-<p>最后一次更新：2020.4.3</p>
+        <content type="html"><![CDATA[<p>最后一次更新：2020.4.3</p>
 <h4 id="前言">前言</h4>
 <figure data-type="image" tabindex="1"><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1585654882560&amp;di=06e335ad7fcc57aa9c572a5f27112fed&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.shunvzhi.com%2Fuploads%2Fallimg%2F181226%2F0T23560U-0.jpg" alt="" loading="lazy"></figure>
 <h4 id="t121985-成绩查询模板rmq问题"><a href="https://www.luogu.com.cn/problem/T121985">T121985 成绩查询/【模板】RMQ问题</a></h4>
@@ -53,7 +52,6 @@
 <p>第三处：提示与说明。不存在数据范围。增加 <code>对于 $100\%$ 的数据，$n\le 7,m\le 6$。</code>。</p>
 <p>备注：</p>
 <p><strong>本题数据较水，会加强</strong></p>
-<hr>
 <h4 id="t121990-论炎宿朱雀的坑爹性"><a href="https://www.luogu.com.cn/problem/T121990">T121990 论炎宿·朱雀的坑爹性</a></h4>
 <p>作者：ScdH</p>
 <p>错误修改：</p>
@@ -79,7 +77,8 @@
 <h4 id="t121993-汉堡"><a href="https://www.luogu.com.cn/problem/T121993">T121993 汉堡</a></h4>
 <p>作者：独步天下</p>
 <p>错误修改：</p>
-<p>错误过多，咕咕咕。</p>
+<p>第一处：题目描述，第一行，<code>n</code> 改为 <code>$n$</code>；<code>m</code> 改为 <code>$m$</code>；<code>a[i][j]</code> 改为 <code>$a_{i,j}$</code>；<code>x</code> 改为 <code>$x$</code>；<code>y</code> 改为 <code>$y$</code>；<code>t</code> 改为 <code>$t$</code>；<code>t</code> 改为 <code>$t$</code>；<code>2</code> 改为 <code>$2$</code>；<code>0</code> 改为 <code>$0$</code>。</p>
+<p>第二处：输出格式，第一行，<code>n</code> 改为 <code>$n$</code>；<code>m</code> 改为 <code>$m$</code>；<code>t</code> 改为 <code>$t$</code>；<code>a[i][j]</code> 改为 <code>$a_{i,j}$</code>；<code>x</code> 改为 <code>$x$</code>；<code>y</code> 改为 <code>$y$</code>。</p>
 <p>备注：</p>
 <p>错误过多，咕咕咕。</p>
 ]]></content>

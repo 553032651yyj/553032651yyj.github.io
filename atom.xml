@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://553032651yyj.github.io</id>
     <title>蒟蒻的栖息地</title>
-    <updated>2020-04-05T11:54:01.706Z</updated>
+    <updated>2020-04-07T04:56:31.454Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://553032651yyj.github.io"/>
     <link rel="self" href="https://553032651yyj.github.io/atom.xml"/>
@@ -10,6 +10,144 @@
     <logo>https://553032651yyj.github.io/images/avatar.png</logo>
     <icon>https://553032651yyj.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 蒟蒻的栖息地</rights>
+    <entry>
+        <title type="html"><![CDATA[「小 Y 的数学赛」赛后题解]]></title>
+        <id>https://553032651yyj.github.io/post/easy-mathmatics-contest-solution/</id>
+        <link href="https://553032651yyj.github.io/post/easy-mathmatics-contest-solution/">
+        </link>
+        <updated>2020-04-05T11:41:22.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="数论提答题">数论提答题</h3>
+<h4 id="data-1">data 1</h4>
+<p>举个例子，设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>4</mn><mo separator="true">,</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(4,1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span> 可以填写一个整数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>，并设第一列的公差为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>d</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">d_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，第四行的公差为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>d</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">d_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，则有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo>(</mo><msub><mi>d</mi><mn>1</mn></msub><mo>+</mo><msub><mi>d</mi><mn>2</mn></msub><mo>)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2(d_1+d_2)=1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，不符合题意。故不可能。<code>No</code>。</p>
+<h4 id="data-2">data 2</h4>
+<p>可证满足原题条件等价于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>n</mi><mo>−</mo><mi>m</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">|n-m|</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">m</span><span class="mord">∣</span></span></span></span> 为偶数。<code>Yes</code>。</p>
+<h4 id="data-3">data 3</h4>
+<p>可以写一个暴力，解得 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mi>min</mi><mo>⁡</mo></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">n_{\min}=2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31750199999999995em;"><span style="top:-2.317502em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.467502em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mop mtight">min</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>。</p>
+<h3 id="选数问题">选数问题</h3>
+<p>原命题等价于求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>max</mi><mo>⁡</mo><mrow><mn>1</mn><mo>≤</mo><mi>m</mi><mo>≤</mo><mi>n</mi></mrow><mrow></mrow></msubsup><mi>d</mi><mo>(</mo><mi>m</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\max\limits_{1\le m\le n}^{} d(m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.562287em;vertical-align:-0.812287em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.73056em;"><span style="top:-2.082892em;margin-left:0em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mrel mtight">≤</span><span class="mord mathdefault mtight">m</span><span class="mrel mtight">≤</span><span class="mord mathdefault mtight">n</span></span></span></span><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mop">max</span></span></span><span style="top:-3.33056em;margin-left:0em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.812287em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">d</span><span class="mopen">(</span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span></span>。其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mo>(</mo><mi>m</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">d(m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">d</span><span class="mopen">(</span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span></span> 表示正整数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span> 的正约数个数。从最小的质数开始枚举，可以解出最优解。可以使用深搜。此处因数据不大，可以枚举。</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int p[8]={0,2,3,5,7,11,13,17};
+int dm=-1;
+int n,top;
+int max(int a,int b){
+	return a&gt;b?a:b;
+} 
+int main(){
+	cin&gt;&gt;n;
+	int ans=1;
+	if(n&lt;=3) cout&lt;&lt;0;
+	else{
+		for(int i=1;ans*p[i]&lt;=n;i++){
+		ans*=p[i];
+		top=i;
+ 	}
+	if(top&lt;=1){
+		for(int i=1;pow(2,i)&lt;=n;i++){
+	    	if(pow(2,i)==n) dm=max(dm,int(log2(n)));
+	    	else dm=max(dm,int(log2(n))+1);
+		}
+	}	
+    if(top&lt;=2){
+    	int a=1,b=1;
+    	for(a=1;pow(p[1],a)*pow(p[2],b)&lt;=n;a++){
+    		for(b=1;pow(p[1],a)*pow(p[2],b)&lt;=n;b++)
+    			dm=max(dm,(a+1)*(b+1)); 
+			b=1;
+		}	
+	} 
+	if(top&lt;=3){
+    	int a=1,b=1,c=1;
+    	for(a=1;pow(p[1],a)*pow(p[2],b)*pow(p[3],c)&lt;=n;a++){
+    		for(b=1;pow(p[1],a)*pow(p[2],b)*pow(p[3],c)&lt;=n;b++){
+    			for(c=1;pow(p[1],a)*pow(p[2],b)*pow(p[3],c)&lt;=n;c++)
+    		    	dm=max(dm,(a+1)*(b+1)*(c+1)); 
+    		    c=1;
+			}
+			b=1;
+		}	
+	} 
+	if(top&lt;=4){
+    	int a=1,b=1,c=1,d=1;
+    	for(a=1;pow(p[1],a)*pow(p[2],b)*pow(p[3],c)*pow(p[4],d)&lt;=n;a++){
+    		for(b=1;pow(p[1],a)*pow(p[2],b)*pow(p[3],c)*pow(p[4],d)&lt;=n;b++){
+    			for(c=1;pow(p[1],a)*pow(p[2],b)*pow(p[3],c)*pow(p[4],d)&lt;=n;c++){
+    				for(d=1;pow(p[1],a)*pow(p[2],b)*pow(p[3],c)*pow(p[4],d)&lt;=n;d++)
+    		        	dm=max(dm,(a+1)*(b+1)*(c+1)*(d+1)); 
+    		        d=1;
+				}
+    		    c=1;
+			}
+			b=1;
+		}	
+	}
+	if(top&lt;=5){
+    	int a=1,b=1,c=1,d=1,e=1;
+    	for(a=1;pow(p[1],a)*pow(p[2],b)*pow(p[3],c)*pow(p[4],d)*pow(p[5],e)&lt;=n;a++){
+    		for(b=1;pow(p[1],a)*pow(p[2],b)*pow(p[3],c)*pow(p[4],d)*pow(p[5],e)&lt;=n;b++){
+    			for(c=1;pow(p[1],a)*pow(p[2],b)*pow(p[3],c)*pow(p[4],d)*pow(p[5],e)&lt;=n;c++){
+    				for(d=1;pow(p[1],a)*pow(p[2],b)*pow(p[3],c)*pow(p[4],d)*pow(p[5],e)&lt;=n;d++){
+    					for(e=1;pow(p[1],a)*pow(p[2],b)*pow(p[3],c)*pow(p[4],d)*pow(p[5],e)&lt;=n;e++)
+    		        	    dm=max(dm,(a+1)*(b+1)*(c+1)*(d+1)*(e+1)); 
+    		        	e=1;
+					}
+    		        d=1;
+				}
+    		    c=1;
+			}
+			b=1;
+		}	
+	} 
+	if(top&lt;=6){
+    	int a=1,b=1,c=1,d=1,e=1,f=1;
+    	for(a=1;pow(p[1],a)*pow(p[2],b)*pow(p[3],c)*pow(p[4],d)*pow(p[5],e)*pow(p[6],f)&lt;=n;a++){
+    		for(b=1;pow(p[1],a)*pow(p[2],b)*pow(p[3],c)*pow(p[4],d)*pow(p[5],e)*pow(p[6],f)&lt;=n;b++){
+    			for(c=1;pow(p[1],a)*pow(p[2],b)*pow(p[3],c)*pow(p[4],d)*pow(p[5],e)*pow(p[6],f)&lt;=n;c++){
+    				for(d=1;pow(p[1],a)*pow(p[2],b)*pow(p[3],c)*pow(p[4],d)*pow(p[5],e)*pow(p[6],f)&lt;=n;d++){
+    					for(e=1;pow(p[1],a)*pow(p[2],b)*pow(p[3],c)*pow(p[4],d)*pow(p[5],e)*pow(p[6],f)&lt;=n;e++){
+    						for(f=1;pow(p[1],a)*pow(p[2],b)*pow(p[3],c)*pow(p[4],d)*pow(p[5],e)*pow(p[6],f)&lt;=n;f++)
+						    	dm=max(dm,(a+1)*(b+1)*(c+1)*(d+1)*(e+1)*(f+1));
+						    f=1;
+						}
+    		        	e=1;  
+					}
+    		        d=1;
+				}
+    		    c=1;
+			}
+			b=1;
+		}	
+	} 
+	if(top&lt;=7){
+    	int a=1,b=1,c=1,d=1,e=1,f=1,g=1;
+    	for(a=1;pow(p[1],a)*pow(p[2],b)*pow(p[3],c)*pow(p[4],d)*pow(p[5],e)*pow(p[6],f)*pow(p[7],g)&lt;=n;a++){
+    		for(b=1;pow(p[1],a)*pow(p[2],b)*pow(p[3],c)*pow(p[4],d)*pow(p[5],e)*pow(p[6],f)*pow(p[7],g)&lt;=n;b++){
+    			for(c=1;pow(p[1],a)*pow(p[2],b)*pow(p[3],c)*pow(p[4],d)*pow(p[5],e)*pow(p[6],f)*pow(p[7],g)&lt;=n;c++){
+    				for(d=1;pow(p[1],a)*pow(p[2],b)*pow(p[3],c)*pow(p[4],d)*pow(p[5],e)*pow(p[6],f)*pow(p[7],g)&lt;=n;d++){
+    					for(e=1;pow(p[1],a)*pow(p[2],b)*pow(p[3],c)*pow(p[4],d)*pow(p[5],e)*pow(p[6],f)*pow(p[7],g)&lt;=n;e++){
+    						for(f=1;pow(p[1],a)*pow(p[2],b)*pow(p[3],c)*pow(p[4],d)*pow(p[5],e)*pow(p[6],f)*pow(p[7],g)&lt;=n;f++){
+    							for(g=1;pow(p[1],a)*pow(p[2],b)*pow(p[3],c)*pow(p[4],d)*pow(p[5],e)*pow(p[6],f)*pow(p[7],g)&lt;=n;g++)
+								    dm=max(dm,(a+1)*(b+1)*(c+1)*(d+1)*(e+1)*(f+1)*(g+1));
+								g=1;
+							}
+						    f=1;
+						}
+    		        	e=1;  
+					}
+    		        d=1;
+				}
+    		    c=1;
+			}
+			b=1;
+		}	
+	} 
+	cout&lt;&lt;dm;
+	}
+} 
+</code></pre>
+<h3 id=""></h3>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[「小 Y 的数学赛」赛后题解]]></title>
         <id>https://553032651yyj.github.io/post/xiao-y-de-shu-xue-sai-sai-hou-ti-jie/</id>

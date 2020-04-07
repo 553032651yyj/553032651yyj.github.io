@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>「小 Y 的数学赛」赛后题解 | 蒟蒻的栖息地</title>
-<link rel="shortcut icon" href="https://553032651yyj.github.io/favicon.ico?v=1586235459447">
+<link rel="shortcut icon" href="https://553032651yyj.github.io/favicon.ico?v=1586235752909">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://553032651yyj.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="「小 Y 的数学赛」赛后题解 | 蒟蒻的栖息地 - Atom Feed" href="https://553032651yyj.github.io/atom.xml">
@@ -23,7 +23,7 @@ data 1
       <div class="main-content">
         <div class="site-header">
   <a href="https://553032651yyj.github.io">
-  <img class="avatar" src="https://553032651yyj.github.io/images/avatar.png?v=1586235459447" alt="">
+  <img class="avatar" src="https://553032651yyj.github.io/images/avatar.png?v=1586235752909" alt="">
   </a>
   <h1 class="site-title">
     蒟蒻的栖息地
@@ -233,7 +233,26 @@ int main(){
 	}
 } 
 </code></pre>
-<h3 id=""></h3>
+<h3 id="回文数计数">回文数计数</h3>
+<p>蛮基础的。</p>
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+using namespace std;
+const int mod=int(1e9)+7;
+int n,f[10010]={1},ans=0;
+int main()
+{
+cin&gt;&gt;n;
+f[0]=1;
+for(int i=1;i&lt;=n;i++)
+{
+f[i]=(long long)f[i-1]*10%mod;
+ans=(ans+(long long)f[i/2+(i&amp;1)-1]*9)%mod;
+}
+cout&lt;&lt;ans&lt;&lt;endl;
+return 0;
+}
+</code></pre>
+<p>代码来源:liqingyang</p>
 
               </div>
               <div class="toc-container">
@@ -250,7 +269,7 @@ int main(){
 </ul>
 </li>
 <li><a href="#%E9%80%89%E6%95%B0%E9%97%AE%E9%A2%98">选数问题</a></li>
-<li></li>
+<li><a href="#%E5%9B%9E%E6%96%87%E6%95%B0%E8%AE%A1%E6%95%B0">回文数计数</a></li>
 </ul>
 </li>
 </ul>

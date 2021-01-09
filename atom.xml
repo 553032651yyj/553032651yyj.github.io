@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://553032651yyj.github.io</id>
-    <title>蒟蒻的栖息地</title>
-    <updated>2021-01-09T14:38:07.626Z</updated>
+    <title>cvyl30 的小站</title>
+    <updated>2021-01-09T14:40:19.660Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://553032651yyj.github.io"/>
     <link rel="self" href="https://553032651yyj.github.io/atom.xml"/>
-    <subtitle>菜鸡</subtitle>
+    <subtitle>啥都不会 QAQ</subtitle>
     <logo>https://553032651yyj.github.io/images/avatar.png</logo>
     <icon>https://553032651yyj.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, 蒟蒻的栖息地</rights>
+    <rights>All rights reserved 2021, cvyl30 的小站</rights>
     <entry>
         <title type="html"><![CDATA[二次剩余学习笔记]]></title>
         <id>https://553032651yyj.github.io/post/quad-residue/</id>

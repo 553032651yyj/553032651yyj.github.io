@@ -1,275 +1,196 @@
+
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
+    
+<meta charset="utf-8" >
 
 <title>学习笔记 | cvyl30 的小站</title>
 <meta name="description" content="啥都不会 QAQ">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://553032651yyj.github.io/favicon.ico?v=1610723591049">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="shortcut icon" href="https://553032651yyj.github.io/favicon.ico?v=1610723895808">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://553032651yyj.github.io/styles/main.css">
 
 
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
   </head>
   <body>
-    <nav class="navbar border fixed split-nav">
-  <div class="nav-brand">
-    <h3><a href="https://553032651yyj.github.io">cvyl30 的小站</a></h3>
-  </div>
-  <div class="collapsible">
-    <input id="collapsible1" type="checkbox" name="collapsible1">
-    <button>
-      <label for="collapsible1">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </label>
-    </button>
-    <div class="collapsible-body">
-      <ul class="inline">
-        
-          <li>
-            
-              <a href="/" class="menu">
-                首页
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="https://www.luogu.com.cn/user/205821" class="menu">
-                洛谷主页
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="https://www.luogu.com.cn/blog/2018psxtdjryyj/" class="menu">
-                洛谷博客
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="https://553032651yyj.github.io/tags" class="menu">
-                按标签查找
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="https://github.com/553032651yyj/553032651yyj.github.io" class="menu">
-                Github 仓库
-              </a>
-            
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-    <div id="top" class="row site">
-      <div class="sm-12 md-8 col">
-        <div class="paper">
-          <h2 class="current-tag">标签: 学习笔记</h2>
-          
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://553032651yyj.github.io/post/Lagrange-multiplier-methods/">拉格朗日乘数法 及 例题</a>
-    </h2>
-    <p class="article-meta">
-      2021-01-10
-      
-        <a href="https://553032651yyj.github.io/tag/cZnden1KU/" class="badge secondary">
-          数学
-        </a>
-      
-        <a href="https://553032651yyj.github.io/tag/aVsa9Abtj/" class="badge success">
-          学习笔记
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      
-    </p>
-    <div class="row">
-      <a href="https://553032651yyj.github.io/post/Lagrange-multiplier-methods/" class="readmore-link">
-        <button>
-          Read More
-        </button>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://553032651yyj.github.io">
+        <img class="avatar" src="https://553032651yyj.github.io/images/avatar.png?v=1610723895808" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://553032651yyj.github.io">
+        <h1 class="site-title">cvyl30 的小站</h1>
       </a>
     </div>
-  </article>
-
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://553032651yyj.github.io/post/quad-residue/">二次剩余学习笔记</a>
-    </h2>
-    <p class="article-meta">
-      2021-01-09
-      
-        <a href="https://553032651yyj.github.io/tag/aVsa9Abtj/" class="badge warning">
-          学习笔记
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      <!-- more -->
-
-    </p>
-    <div class="row">
-      <a href="https://553032651yyj.github.io/post/quad-residue/" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
     </div>
-  </article>
-
-
-        </div>
-        <div class="row flex-edges">
-  
-  
+  </div>
 </div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://www.luogu.com.cn/user/205821" class="menu purple-link">
+            洛谷主页
+          </a>
+        
+      
+        
+          <a href="https://www.luogu.com.cn/blog/2018psxtdjryyj/" class="menu purple-link">
+            洛谷博客
+          </a>
+        
+      
+        
+          <a href="https://553032651yyj.github.io/tags" class="menu purple-link">
+            按标签查找
+          </a>
+        
+      
+        
+          <a href="https://github.com/553032651yyj/553032651yyj.github.io" class="menu purple-link">
+            Github 仓库
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+
+        <div class="current-tag-container">
+          <h2 class="title">
+            <i class="icon icon-pricetags-outline"></i> 学习笔记
+          </h2> 
+        </div>
+
+        
+<section class="post-item">
+    <div class="content">
+      <a href="https://553032651yyj.github.io/post/Lagrange-multiplier-methods/">
+        <h2 class="post-title">拉格朗日乘数法 及 例题</h2>
+      </a>
+      <div class="post-abstract">
+        
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2021-01-10</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://553032651yyj.github.io/tag/cZnden1KU/">
+                数学
+                
+                  ，
+                
+              </a>
+            
+              <a href="https://553032651yyj.github.io/tag/aVsa9Abtj/">
+                学习笔记
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://553032651yyj.github.io/post/quad-residue/">
+        <h2 class="post-title">二次剩余学习笔记</h2>
+      </a>
+      <div class="post-abstract">
+        <!-- more -->
 
       </div>
-      <div class="sm-12 md-4 col sidebar">
-  <div class="paper info-container">
-    <img src="https://553032651yyj.github.io/images/avatar.png?v=1610723591049" class="no-responsive avatar">
-    <div class="text-muted">啥都不会 QAQ</div>
-    <div class="social-container">
-      
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2021-01-09</span>
         
-      
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://553032651yyj.github.io/tag/aVsa9Abtj/">
+                学习笔记
+                
+              </a>
+            
+          </span>
         
-      
-        
-      
-        
-      
-        
-      
+      </div>
     </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      最新文章
-    </div>
-    <div class="row">
-      <ul>
-        
-          
-            <li>
-              <a href="https://553032651yyj.github.io/post/Lagrange-multiplier-methods/">拉格朗日乘数法 及 例题</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://553032651yyj.github.io/post/quad-residue/">二次剩余学习笔记</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://553032651yyj.github.io/post/u145332-bounce-ti-jie/">U145332 Bounce 题解</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://553032651yyj.github.io/post/Solution-T129674/">T129674 水题 题解</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://553032651yyj.github.io/post/easy-mathmatics-contest-solution/">「小 Y 的数学赛」赛后题解</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://553032651yyj.github.io/post/xslm-correct-problems/">XSLM 团队 题目修改情况</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://553032651yyj.github.io/post/Water-Comtest-Solution/">「小 Y 的水题大赛」赛后题解</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://553032651yyj.github.io/post/Segment - Tree/">线段树 - Segment Tree</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://553032651yyj.github.io/post/Union-find Sets/">并查集 - Union-find Sets</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://553032651yyj.github.io/post/everyday-chat-contest-round-1-solutions/">「ECC Round 1」赛后题解 - 「Everyday Chat Contest Round 1」Solutions</a>
-            </li>
-          
-        
-          
-        
-      </ul>
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      标签列表
-    </div>
-    <div class="row">
-      
-        <a href="https://553032651yyj.github.io/tag/cZnden1KU/" class="badge success">
-          数学
-        </a>
-      
-        <a href="https://553032651yyj.github.io/tag/aVsa9Abtj/" class="badge secondary">
-          学习笔记
-        </a>
-      
-    </div>
-  </div>
-  <div class="paper">
-    Author:<a href="https://www.luogu.com.cn/user/205821" target="_blank">cvyl30</a> | <a class="rss" href="https://553032651yyj.github.io/atom.xml" target="_blank">RSS</a>
-  </div>
+    
+  </section>
+
+
+<div class="pagination-container">
+  
+  
 </div>
 
+
+      </div>
+
+      <div class="site-footer">
+  <div class="slogan">啥都不会 QAQ</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Author:<a href="https://www.luogu.com.cn/user/205821" target="_blank">cvyl30</a> | <a class="rss" href="https://553032651yyj.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
     </div>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-<script type="application/javascript">
-
-AOS.init();
+    <script type="application/javascript">
 
 hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
 </script>
 

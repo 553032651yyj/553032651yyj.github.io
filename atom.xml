@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://553032651yyj.github.io</id>
     <title>cvyl30 的小站</title>
-    <updated>2021-01-15T15:18:17.341Z</updated>
+    <updated>2021-04-10T11:35:35.802Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://553032651yyj.github.io"/>
     <link rel="self" href="https://553032651yyj.github.io/atom.xml"/>
@@ -10,6 +10,57 @@
     <logo>https://553032651yyj.github.io/images/avatar.png</logo>
     <icon>https://553032651yyj.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, cvyl30 的小站</rights>
+    <entry>
+        <title type="html"><![CDATA[学习笔记 和弦 入门（更新）]]></title>
+        <id>https://553032651yyj.github.io/post/xue-xi-bi-ji-he-xian-ru-men-geng-xin/</id>
+        <link href="https://553032651yyj.github.io/post/xue-xi-bi-ji-he-xian-ru-men-geng-xin/">
+        </link>
+        <updated>2021-04-10T09:55:53.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<h3 id="概念">概念</h3>
+<p>将三个或以上的音，按照三度或非三度的叠置关系，在纵向上加以结合，就成为和弦。</p>
+<p>一般来说，基本常用的是三和弦与七和弦。三和弦为三个音的和弦；七和弦为四个音的和弦。</p>
+<p>三和弦和七和弦都是三度和弦。</p>
+<!-- more -->
+<h3 id="三和弦三度和弦">三和弦（三度和弦）</h3>
+<!-- more -->
+<h4 id="组成">组成</h4>
+<p>由根音，三音，五音组成。例如下图即为一个三和弦。</p>
+<figure data-type="image" tabindex="1"><img src="https://553032651yyj.github.io/post-images/1618049839561.png" alt="" loading="lazy"></figure>
+<h4 id="大三度和小三度">大三度和小三度</h4>
+<p>两个白键之间如果是白（+黑+白+黑+）白，那么两白键之间就是大三度；如果是白（+黑+白+）白，那么两个白键之间就是小三度；如果是白+（白+黑+）白，那么两白之间也是小三度。</p>
+<p>琴键：C #C(bD) D #D(bE) E F #F(bG) G #G(bA) A #A(bB) B。</p>
+<h4 id="大三和弦">大三和弦</h4>
+<p>根音与三音是大三度，三音与五音是小三度，根音和五音恰好为纯五度。</p>
+<p>特点是音乐色彩明亮。</p>
+<h4 id="小三和弦">小三和弦</h4>
+<p>根音与三音是小三度，三音与五音是大三度，根音和五音恰好为纯五度。</p>
+<p>特点是音乐色彩暗淡。</p>
+<h4 id="增三和弦">增三和弦</h4>
+<p>根音与三音是大三度，三音与五音是大三度，根音和五音恰好为增五度。</p>
+<p>特点是该和弦音响极为粗糙，属于极不协和的和弦。</p>
+<h4 id="减三和弦">减三和弦</h4>
+<p>根音与三音是小三度，三音与五音是小三度，根音和五音恰好为减五度。</p>
+<p>特点是不协和。</p>
+<h3 id="七和弦三度和弦">七和弦（三度和弦）</h3>
+<!-- more -->
+<h4 id="大小七和弦">大小七和弦</h4>
+<p>根音，三音，五音构成大三和弦；七音和五音是小三度。</p>
+<h4 id="小小七和弦">小小七和弦</h4>
+<p>根音，三音，五音构成小三和弦；七音和五音是小三度。</p>
+<h4 id="减小七和弦">减小七和弦</h4>
+<p>根音，三音，五音构成减三和弦；七音和五音是大三度。</p>
+<h4 id="减减七和弦">减减七和弦</h4>
+<p>根音，三音，五音构成减三和弦；七音和五音是小三度。</p>
+<h4 id="增大七和弦不常用">增大七和弦（不常用）</h4>
+<p>根音，三音，五音构成增三和弦；七音和五音是小三度。</p>
+<h4 id="大大七和弦不常用">大大七和弦（不常用）</h4>
+<p>根音，三音，五音构成大三和弦；七音和五音是大三度。</p>
+<h4 id="小大七和弦不常用">小大七和弦（不常用）</h4>
+<p>根音，三音，五音构成小三和弦；七音和五音是大三度。</p>
+<h3 id="原位和弦转位和弦">原位和弦，转位和弦</h3>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[拉格朗日乘数法 及 例题]]></title>
         <id>https://553032651yyj.github.io/post/Lagrange-multiplier-methods/</id>
@@ -159,22 +210,23 @@ s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class=
 <p>证毕。 ​</p>
 <!-- more -->
 <h3 id="实现">实现</h3>
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+<pre><code class="language-cpp">
+#include &lt;bits/stdc++.h&gt;
 using namespace std;
 
 typedef long long ll;
 ll i2, n, p;
-struct cplx{
+struct Complex{
 	ll r, i;
-	cplx(ll r = 0, ll i = 0): r(r), i(i) {}
+	Complex(ll r = 0, ll i = 0): r(r), i(i) {}
 };
-cplx operator * (cplx x, cplx y){
-	cplx ans = cplx(0, 0);
+Complex operator * (Complex x, Complex y){
+	Complex ans = Complex(0, 0);
 	ans.r = (x.r * y.r % p + x.i * y.i % p * i2 % p + p) % p, ans.i = (x.r * y.i % p + x.i * y.r % p + p) % p;
 	return ans;
 }
-ll qpow(cplx a, ll b, ll p){
-	cplx ans = cplx(1, 0); 
+ll qpow(Complex a, ll b, ll p){
+	Complex ans = Complex(1, 0); 
 	while(b){if(b &amp; 1) ans = ans * a; a = a * a, b &gt;&gt;= 1; }
 	return ans.r % p;
 }
@@ -190,7 +242,7 @@ ll Cipolla(ll n, ll p){
 	assert(p % 2);
 	if(n != 0 &amp;&amp; qpow(n, (p - 1) &gt;&gt; 1, p) == (p - 1)) return -1;
 	ll x = 0; do x = rnd(); while(qpow(i2 = (x * x - n + p) % p, (p - 1) &gt;&gt; 1, p) != (p - 1));
-    return (qpow((cplx){x, 1}, (p + 1) &gt;&gt; 1, p) + p) % p;
+    return (qpow((Complex){x, 1}, (p + 1) &gt;&gt; 1, p) + p) % p;
 }
 int T;
 int main(){
@@ -198,11 +250,12 @@ int main(){
 	cin &gt;&gt; T;
 	while(T--){
 		cin &gt;&gt; n &gt;&gt; p; if(n == 0){cout &lt;&lt; 0; continue;}
-	    ll ans = cipolla(n, p), ans2 = p - ans;
-	    if(ans == -1) puts(&quot;Hola!&quot;);
+	    ll ans = Cipolla(n, p), ans2 = p - ans;
+	    if(ans == -1) {cout &lt;&lt; -1 &lt;&lt; endl; continue; }
 	    else{
-	    	if(ans &gt; ans2) cout &lt;&lt; ans2 &lt;&lt; ' ' &lt;&lt; ans, puts(&quot;&quot;);
-	    	else cout &lt;&lt; ans &lt;&lt; ' ' &lt;&lt; ans2, puts(&quot;&quot;); 
+	    	cout &lt;&lt; 1 &lt;&lt; ' ';
+	    	if(ans &gt; ans2) cout &lt;&lt; ans2 &lt;&lt; ' ' &lt;&lt; ans &lt;&lt; endl;
+	    	else cout &lt;&lt; ans &lt;&lt; ' ' &lt;&lt; ans2 &lt;&lt; endl;
 		}
 	}
 }

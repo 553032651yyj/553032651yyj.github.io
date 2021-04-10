@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>并查集 - Union-find Sets | cvyl30 的小站</title>
+<title>学习笔记 和弦 入门（更新） | cvyl30 的小站</title>
 <meta name="description" content="啥都不会 QAQ">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -92,62 +92,68 @@
       <div class="content-container">
         <div class="post-detail">
           
-          <h2 class="post-title">并查集 - Union-find Sets</h2>
+          <h2 class="post-title">学习笔记 和弦 入门（更新）</h2>
           <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2020-03-28</span>
+            <span><i class="icon-calendar-outline"></i> 2021-04-10</span>
             
           </div>
           <div class="post-content">
             <!-- more -->
-<h3 id="概述">概述</h3>
-<p>并查集是一种树形的数据结构，顾名思义，它用于处理一些不交集的 合并 及 查询 问题。 它支持两种操作：</p>
-<ul>
-<li>
-<p>查找（Find）：确定某个元素处于哪个子集；</p>
-</li>
-<li>
-<p>合并（Union）：将两个子集合并成一个集合。</p>
-</li>
-</ul>
-<h3 id="reset">reset</h3>
-<pre><code class="language-cpp">void makeSet(int size) {
-  for (int i = 0; i &lt; size; i++) fa[i] = i; 
-  return;
-}
-</code></pre>
-<p><code>fa[i]=i</code> 表示 <code>i的父结点为fa[i]</code></p>
-<h3 id="find">find</h3>
-<pre><code class="language-cpp">int find(int x) { 
-  if(fa[x]==x) return x;
-  else return find(fa[x]);  
-}
-</code></pre>
-<p><code>如果fa[x]==x，则表示找到，返回</code></p>
-<p>反之，询问<code>fa[fa[x]]</code></p>
-<p>这是找祖先的过程。</p>
-<h3 id="union">union</h3>
-<pre><code class="language-cpp">void union(int x, int y) {
-  x = find(x);
-  y = find(y);
-  if (x == y) return; 
-  fa[x] = y;
-}
-</code></pre>
-<p><code>如果为同一个祖先，不用合并</code></p>
-<p><code>否则合并。</code></p>
-<h3 id="题目">题目</h3>
-<p><a href="https://www.luogu.com.cn/problem/P3367">P3367-模板-并查集</a> AC</p>
-<p><a href="https://www.luogu.com.cn/problem/P1551">P1551-亲戚</a> AC</p>
-<p><a href="https://www.luogu.com.cn/problem/P6121">P6121-[USACO16OPEN]Closing the Farm G</a> -</p>
-<p><a href="https://www.luogu.com.cn/problem/P3144">P3144-[USACO16OPEN]Closing the Farm S</a> -</p>
-<hr>
-<p>引用:</p>
-<p>OI-wiki-并查集</p>
+<h3 id="概念">概念</h3>
+<p>将三个或以上的音，按照三度或非三度的叠置关系，在纵向上加以结合，就成为和弦。</p>
+<p>一般来说，基本常用的是三和弦与七和弦。三和弦为三个音的和弦；七和弦为四个音的和弦。</p>
+<p>三和弦和七和弦都是三度和弦。</p>
+<!-- more -->
+<h3 id="三和弦三度和弦">三和弦（三度和弦）</h3>
+<!-- more -->
+<h4 id="组成">组成</h4>
+<p>由根音，三音，五音组成。例如下图即为一个三和弦。</p>
+<figure data-type="image" tabindex="1"><img src="https://553032651yyj.github.io/post-images/1618049839561.png" alt="" loading="lazy"></figure>
+<h4 id="大三度和小三度">大三度和小三度</h4>
+<p>两个白键之间如果是白（+黑+白+黑+）白，那么两白键之间就是大三度；如果是白（+黑+白+）白，那么两个白键之间就是小三度；如果是白+（白+黑+）白，那么两白之间也是小三度。</p>
+<p>琴键：C #C(bD) D #D(bE) E F #F(bG) G #G(bA) A #A(bB) B。</p>
+<h4 id="大三和弦">大三和弦</h4>
+<p>根音与三音是大三度，三音与五音是小三度，根音和五音恰好为纯五度。</p>
+<p>特点是音乐色彩明亮。</p>
+<h4 id="小三和弦">小三和弦</h4>
+<p>根音与三音是小三度，三音与五音是大三度，根音和五音恰好为纯五度。</p>
+<p>特点是音乐色彩暗淡。</p>
+<h4 id="增三和弦">增三和弦</h4>
+<p>根音与三音是大三度，三音与五音是大三度，根音和五音恰好为增五度。</p>
+<p>特点是该和弦音响极为粗糙，属于极不协和的和弦。</p>
+<h4 id="减三和弦">减三和弦</h4>
+<p>根音与三音是小三度，三音与五音是小三度，根音和五音恰好为减五度。</p>
+<p>特点是不协和。</p>
+<h3 id="七和弦三度和弦">七和弦（三度和弦）</h3>
+<!-- more -->
+<h4 id="大小七和弦">大小七和弦</h4>
+<p>根音，三音，五音构成大三和弦；七音和五音是小三度。</p>
+<h4 id="小小七和弦">小小七和弦</h4>
+<p>根音，三音，五音构成小三和弦；七音和五音是小三度。</p>
+<h4 id="减小七和弦">减小七和弦</h4>
+<p>根音，三音，五音构成减三和弦；七音和五音是大三度。</p>
+<h4 id="减减七和弦">减减七和弦</h4>
+<p>根音，三音，五音构成减三和弦；七音和五音是小三度。</p>
+<h4 id="增大七和弦不常用">增大七和弦（不常用）</h4>
+<p>根音，三音，五音构成增三和弦；七音和五音是小三度。</p>
+<h4 id="大大七和弦不常用">大大七和弦（不常用）</h4>
+<p>根音，三音，五音构成大三和弦；七音和五音是大三度。</p>
+<h4 id="小大七和弦不常用">小大七和弦（不常用）</h4>
+<p>根音，三音，五音构成小三和弦；七音和五音是大三度。</p>
+<h3 id="原位和弦转位和弦">原位和弦，转位和弦</h3>
 
           </div>
         </div>
 
         
+          <div class="next-post">
+            <a class="purple-link" href="https://553032651yyj.github.io/post/Lagrange-multiplier-methods/">
+              <h3 class="post-title">
+                下一篇：拉格朗日乘数法 及 例题
+              </h3>
+            </a>
+          </div>
+          
       </div>
 
       

@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://553032651yyj.github.io/favicon.ico?v=1610723895808">
+<link rel="shortcut icon" href="https://553032651yyj.github.io/favicon.ico?v=1618054529500">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://553032651yyj.github.io/styles/main.css">
 
@@ -36,7 +36,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://553032651yyj.github.io">
-        <img class="avatar" src="https://553032651yyj.github.io/images/avatar.png?v=1610723895808" alt="" width="32px" height="32px">
+        <img class="avatar" src="https://553032651yyj.github.io/images/avatar.png?v=1618054529500" alt="" width="32px" height="32px">
       </a>
       <a href="https://553032651yyj.github.io">
         <h1 class="site-title">cvyl30 的小站</h1>
@@ -140,22 +140,23 @@
 <p>证毕。 ​</p>
 <!-- more -->
 <h3 id="实现">实现</h3>
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+<pre><code class="language-cpp">
+#include &lt;bits/stdc++.h&gt;
 using namespace std;
 
 typedef long long ll;
 ll i2, n, p;
-struct cplx{
+struct Complex{
 	ll r, i;
-	cplx(ll r = 0, ll i = 0): r(r), i(i) {}
+	Complex(ll r = 0, ll i = 0): r(r), i(i) {}
 };
-cplx operator * (cplx x, cplx y){
-	cplx ans = cplx(0, 0);
+Complex operator * (Complex x, Complex y){
+	Complex ans = Complex(0, 0);
 	ans.r = (x.r * y.r % p + x.i * y.i % p * i2 % p + p) % p, ans.i = (x.r * y.i % p + x.i * y.r % p + p) % p;
 	return ans;
 }
-ll qpow(cplx a, ll b, ll p){
-	cplx ans = cplx(1, 0); 
+ll qpow(Complex a, ll b, ll p){
+	Complex ans = Complex(1, 0); 
 	while(b){if(b &amp; 1) ans = ans * a; a = a * a, b &gt;&gt;= 1; }
 	return ans.r % p;
 }
@@ -171,7 +172,7 @@ ll Cipolla(ll n, ll p){
 	assert(p % 2);
 	if(n != 0 &amp;&amp; qpow(n, (p - 1) &gt;&gt; 1, p) == (p - 1)) return -1;
 	ll x = 0; do x = rnd(); while(qpow(i2 = (x * x - n + p) % p, (p - 1) &gt;&gt; 1, p) != (p - 1));
-    return (qpow((cplx){x, 1}, (p + 1) &gt;&gt; 1, p) + p) % p;
+    return (qpow((Complex){x, 1}, (p + 1) &gt;&gt; 1, p) + p) % p;
 }
 int T;
 int main(){
@@ -179,11 +180,12 @@ int main(){
 	cin &gt;&gt; T;
 	while(T--){
 		cin &gt;&gt; n &gt;&gt; p; if(n == 0){cout &lt;&lt; 0; continue;}
-	    ll ans = cipolla(n, p), ans2 = p - ans;
-	    if(ans == -1) puts(&quot;Hola!&quot;);
+	    ll ans = Cipolla(n, p), ans2 = p - ans;
+	    if(ans == -1) {cout &lt;&lt; -1 &lt;&lt; endl; continue; }
 	    else{
-	    	if(ans &gt; ans2) cout &lt;&lt; ans2 &lt;&lt; ' ' &lt;&lt; ans, puts(&quot;&quot;);
-	    	else cout &lt;&lt; ans &lt;&lt; ' ' &lt;&lt; ans2, puts(&quot;&quot;); 
+	    	cout &lt;&lt; 1 &lt;&lt; ' ';
+	    	if(ans &gt; ans2) cout &lt;&lt; ans2 &lt;&lt; ' ' &lt;&lt; ans &lt;&lt; endl;
+	    	else cout &lt;&lt; ans &lt;&lt; ' ' &lt;&lt; ans2 &lt;&lt; endl;
 		}
 	}
 }

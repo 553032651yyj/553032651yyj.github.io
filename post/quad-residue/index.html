@@ -1,114 +1,110 @@
-
-<!DOCTYPE html>
 <html>
   <head>
-    
-<meta charset="utf-8" >
-
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>二次剩余学习笔记 | cvyl30 的小站</title>
-<meta name="description" content="啥都不会 QAQ">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://553032651yyj.github.io/favicon.ico?v=1620744988863">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://553032651yyj.github.io/favicon.ico?v=1620745151209">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://553032651yyj.github.io/styles/main.css">
-
-
-  
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
-  
-
-  
-
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="alternate" type="application/atom+xml" title="二次剩余学习笔记 | cvyl30 的小站 - Atom Feed" href="https://553032651yyj.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
+    <meta name="description" content="
+
+二次剩余 | Quadratic Residue
+求解方程 x2≡a( mod p)x^2\equiv a(\bmod p)x2≡a(modp)。
+如果该方程有正整数解，称 aaa 是 ppp 的二次剩余。以下设 ppp 是及素数。
+
+..." />
+    <meta name="keywords" content="学习笔记" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
   <body>
-    <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://553032651yyj.github.io">
-        <img class="avatar" src="https://553032651yyj.github.io/images/avatar.png?v=1620744988863" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://553032651yyj.github.io">
-        <h1 class="site-title">cvyl30 的小站</h1>
-      </a>
-    </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
-    </div>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://553032651yyj.github.io">
+  <img class="avatar" src="https://553032651yyj.github.io/images/avatar.png?v=1620745151209" alt="">
+  </a>
+  <h1 class="site-title">
+    cvyl30 的小站
+  </h1>
+  <p class="site-description">
+    啥都不会 QAQ
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="https://www.luogu.com.cn/user/205821" class="menu">
+          洛谷主页
+        </a>
+      
+    
+      
+        <a href="https://www.luogu.com.cn/blog/2018psxtdjryyj/" class="menu">
+          洛谷博客
+        </a>
+      
+    
+      
+        <a href="https://553032651yyj.github.io/tags" class="menu">
+          按标签查找
+        </a>
+      
+    
+      
+        <a href="https://github.com/553032651yyj/553032651yyj.github.io" class="menu">
+          Github 仓库
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
   </div>
 </div>
 
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
-      
-        
-          <a href="/" class="menu purple-link">
-            首页
-          </a>
-        
-      
-        
-          <a href="https://www.luogu.com.cn/user/205821" class="menu purple-link">
-            洛谷主页
-          </a>
-        
-      
-        
-          <a href="https://www.luogu.com.cn/blog/2018psxtdjryyj/" class="menu purple-link">
-            洛谷博客
-          </a>
-        
-      
-        
-          <a href="https://553032651yyj.github.io/tags" class="menu purple-link">
-            按标签查找
-          </a>
-        
-      
-        
-          <a href="https://github.com/553032651yyj/553032651yyj.github.io" class="menu purple-link">
-            Github 仓库
-          </a>
-        
-      
-    </div>
-  </div>
-</transition>
-
-
-      <div class="content-container">
         <div class="post-detail">
-          
-          <h2 class="post-title">二次剩余学习笔记</h2>
-          <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2021-01-09</span>
-            
+          <article class="post">
+            <h2 class="post-title">
+              二次剩余学习笔记
+            </h2>
+            <div class="post-info">
               <span>
-                <i class="icon-pricetags-outline"></i>
-                
-                  <a href="https://553032651yyj.github.io/tag/aVsa9Abtj/">
-                    学习笔记
-                    
-                  </a>
-                
+                2021-01-09
               </span>
+              <span>
+                6 min read
+              </span>
+              
+                <a href="https://553032651yyj.github.io/tag/aVsa9Abtj/" class="post-tag">
+                  # 学习笔记
+                </a>
+              
+            </div>
             
-          </div>
-          <div class="post-content">
-            <!-- more -->
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <!-- more -->
 <!-- more -->
 <h3 id="二次剩余-quadratic-residue">二次剩余 | Quadratic Residue</h3>
 <p>求解方程 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>≡</mo><mi>a</mi><mo>(</mo><mtext> </mtext><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi></mrow><mtext> </mtext><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">x^2\equiv a(\bmod p)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≡</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">a</span><span class="mopen">(</span><span class="mspace" style="margin-right:0.05555555555555555em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">m</span><span class="mord mathrm">o</span><span class="mord mathrm">d</span></span></span><span class="mspace" style="margin-right:0.05555555555555555em;"></span><span class="mord mathdefault">p</span><span class="mclose">)</span></span></span></span>。</p>
@@ -191,86 +187,120 @@ int main(){
 }
 </code></pre>
 
-          </div>
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E4%BA%8C%E6%AC%A1%E5%89%A9%E4%BD%99-quadratic-residue">二次剩余 | Quadratic Residue</a></li>
+<li><a href="#%E8%A7%A3%E7%9A%84%E6%95%B0%E9%87%8F">解的数量</a></li>
+<li><a href="#%E5%8B%92%E8%AE%A9%E5%BE%B7%E7%AC%A6%E5%8F%B7-legendre-symbol">勒让德符号 | Legendre Symbol</a></li>
+<li><a href="#%E6%AC%A7%E6%8B%89%E5%87%86%E5%88%99">欧拉准则</a></li>
+<li><a href="#%E6%AC%A7%E6%8B%89%E5%87%86%E5%88%99%E7%9A%84%E8%AF%81%E6%98%8E">欧拉准则的证明</a></li>
+<li><a href="#cipolla-%E7%AE%97%E6%B3%95">Cipolla 算法</a></li>
+<li><a href="#%E8%AF%81%E6%98%8E">证明</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0">实现</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
         </div>
 
         
           <div class="next-post">
-            <a class="purple-link" href="https://553032651yyj.github.io/post/you-lian/">
+            <div class="next">下一篇</div>
+            <a href="https://553032651yyj.github.io/post/you-lian/">
               <h3 class="post-title">
-                下一篇：友链
+                友链
               </h3>
             </a>
           </div>
+        
+
+        
           
-      </div>
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
-      
-        
-          <div id="gitalk-container"></div>
-        
+<div id="gitalk-container"></div>
 
-        
-      
+<script>
 
-      <div class="site-footer">
-  <div class="slogan">啥都不会 QAQ</div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  </div>
-  Author:<a href="https://www.luogu.com.cn/user/205821" target="_blank">cvyl30</a> | <a class="rss" href="https://553032651yyj.github.io/atom.xml" target="_blank">RSS</a>
-</div>
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: [''],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
 
-
-    </div>
-    <script type="application/javascript">
-
-hljs.initHighlightingOnLoad()
-
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+  gitalk.render('gitalk-container')
 
 </script>
 
+          
 
+          
+        
 
-  
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        <div class="site-footer">
+  Author:<a href="https://www.luogu.com.cn/user/205821" target="_blank">cvyl30</a>
+  <a class="rss" href="https://553032651yyj.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
     <script>
+      hljs.initHighlightingOnLoad()
 
-      var gitalk = new Gitalk({
-        clientID: '',
-        clientSecret: '',
-        repo: '',
-        owner: '',
-        admin: [''],
-        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-        distractionFreeMode: false  // Facebook-like distraction free mode
-      })
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
 
-      gitalk.render('gitalk-container')
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
 
     </script>
-  
-
-  
-
-
-
-
   </body>
 </html>

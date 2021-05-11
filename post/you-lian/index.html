@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>并查集 - Union-find Sets | cvyl30 的小站</title>
+<title>友链 | cvyl30 的小站</title>
 <meta name="description" content="啥都不会 QAQ">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -92,57 +92,13 @@
       <div class="content-container">
         <div class="post-detail">
           
-          <h2 class="post-title">并查集 - Union-find Sets</h2>
+          <h2 class="post-title">友链</h2>
           <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2020-03-28</span>
+            <span><i class="icon-calendar-outline"></i> 2020-12-11</span>
             
           </div>
           <div class="post-content">
-            <!-- more -->
-<h3 id="概述">概述</h3>
-<p>并查集是一种树形的数据结构，顾名思义，它用于处理一些不交集的 合并 及 查询 问题。 它支持两种操作：</p>
-<ul>
-<li>
-<p>查找（Find）：确定某个元素处于哪个子集；</p>
-</li>
-<li>
-<p>合并（Union）：将两个子集合并成一个集合。</p>
-</li>
-</ul>
-<h3 id="reset">reset</h3>
-<pre><code class="language-cpp">void makeSet(int size) {
-  for (int i = 0; i &lt; size; i++) fa[i] = i; 
-  return;
-}
-</code></pre>
-<p><code>fa[i]=i</code> 表示 <code>i的父结点为fa[i]</code></p>
-<h3 id="find">find</h3>
-<pre><code class="language-cpp">int find(int x) { 
-  if(fa[x]==x) return x;
-  else return find(fa[x]);  
-}
-</code></pre>
-<p><code>如果fa[x]==x，则表示找到，返回</code></p>
-<p>反之，询问<code>fa[fa[x]]</code></p>
-<p>这是找祖先的过程。</p>
-<h3 id="union">union</h3>
-<pre><code class="language-cpp">void union(int x, int y) {
-  x = find(x);
-  y = find(y);
-  if (x == y) return; 
-  fa[x] = y;
-}
-</code></pre>
-<p><code>如果为同一个祖先，不用合并</code></p>
-<p><code>否则合并。</code></p>
-<h3 id="题目">题目</h3>
-<p><a href="https://www.luogu.com.cn/problem/P3367">P3367-模板-并查集</a> AC</p>
-<p><a href="https://www.luogu.com.cn/problem/P1551">P1551-亲戚</a> AC</p>
-<p><a href="https://www.luogu.com.cn/problem/P6121">P6121-[USACO16OPEN]Closing the Farm G</a> -</p>
-<p><a href="https://www.luogu.com.cn/problem/P3144">P3144-[USACO16OPEN]Closing the Farm S</a> -</p>
-<hr>
-<p>引用:</p>
-<p>OI-wiki-并查集</p>
+            <p>Push_Y 的博客：https://wzsyyh.github.io/</p>
 
           </div>
         </div>

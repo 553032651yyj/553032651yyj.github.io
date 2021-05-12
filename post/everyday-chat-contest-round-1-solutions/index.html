@@ -1,110 +1,108 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" >
+
 <title>「ECC Round 1」赛后题解 - 「Everyday Chat Contest Round 1」Solutions | cvyl30 的小站</title>
-<link rel="shortcut icon" href="https://553032651yyj.github.io//favicon.ico?v=1620824087218">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<meta name="description" content="啥都不会 QAQ">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://553032651yyj.github.io//favicon.ico?v=1620824282685">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://553032651yyj.github.io//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="「ECC Round 1」赛后题解 - 「Everyday Chat Contest Round 1」Solutions | cvyl30 的小站 - Atom Feed" href="https://553032651yyj.github.io//atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
 
-    <meta name="description" content="
-比赛链接 &amp; 题目链接
-「ECC Round 1」信息学水群的日常
-[ECC-1]彩票
-[ECC-2]分数
-[ECC-3]代码
-[ECC-4]序列
-「ECC T1」彩票
-算法标签：「概率论，统计」「条件概率」「期望」
-思路：
-E(..." />
-    <meta name="keywords" content="" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://553032651yyj.github.io/">
-  <img class="avatar" src="https://553032651yyj.github.io//images/avatar.png?v=1620824087218" alt="">
-  </a>
-  <h1 class="site-title">
-    cvyl30 的小站
-  </h1>
-  <p class="site-description">
-    啥都不会 QAQ
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="https://www.luogu.com.cn/user/205821" class="menu">
-          洛谷主页
-        </a>
-      
-    
-      
-        <a href="https://www.luogu.com.cn/blog/2018psxtdjryyj/" class="menu">
-          洛谷博客
-        </a>
-      
-    
-      
-        <a href="https://553032651yyj.github.io/tags" class="menu">
-          按标签查找
-        </a>
-      
-    
-      
-        <a href="https://github.com/553032651yyj/553032651yyj.github.io" class="menu">
-          Github 仓库
-        </a>
-      
-    
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://553032651yyj.github.io/">cvyl30 的小站</a></h3>
   </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  </div>
-</div>
-
-        <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              「ECC Round 1」赛后题解 - 「Everyday Chat Contest Round 1」Solutions
-            </h2>
-            <div class="post-info">
-              <span>
-                2020-03-28
-              </span>
-              <span>
-                7 min read
-              </span>
-              
-            </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
             
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <!-- more -->
+              <a href="/" class="menu">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="https://www.luogu.com.cn/user/205821" class="menu">
+                洛谷主页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="https://www.luogu.com.cn/blog/2018psxtdjryyj/" class="menu">
+                洛谷博客
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="https://553032651yyj.github.io/tags" class="menu">
+                按标签查找
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="https://github.com/553032651yyj/553032651yyj.github.io" class="menu">
+                Github 仓库
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>「ECC Round 1」赛后题解 - 「Everyday Chat Contest Round 1」Solutions</h1>
+            <p class="article-meta">
+              2020-03-28
+              
+            </p>
+            
+            <div class="post-content">
+              <!-- more -->
 <h3 id="比赛链接-题目链接">比赛链接 &amp; 题目链接</h3>
 <p><a href="https://www.luogu.com.cn/contest/28142">「ECC Round 1」信息学水群的日常</a></p>
 <p><a href="https://www.luogu.com.cn/problem/T126518">[ECC-1]彩票</a></p>
@@ -333,113 +331,186 @@ int main(){
 }
 </code></pre>
 
-              </div>
-              <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#%E6%AF%94%E8%B5%9B%E9%93%BE%E6%8E%A5-%E9%A2%98%E7%9B%AE%E9%93%BE%E6%8E%A5">比赛链接 &amp; 题目链接</a></li>
-<li><a href="#ecc-t1%E5%BD%A9%E7%A5%A8">「ECC T1」彩票</a></li>
-<li><a href="#ecc-t2%E5%88%86%E6%95%B0">「ECC T2」分数</a>
-<ul>
-<li><a href="#%E6%AD%A3%E7%A1%AE%E6%80%A7">正确性</a></li>
-<li><a href="#%E8%AF%81%E6%98%8E">证明</a></li>
-</ul>
-</li>
-<li><a href="#ecc-t3%E4%BB%A3%E7%A0%81">「ECC T3」代码</a></li>
-<li><a href="#ecc-t4%E5%BA%8F%E5%88%97">「ECC T4」序列</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-              </div>
             </div>
           </article>
         </div>
-
-        
-
+        <div class="paper" data-aos="fade-in">
+          
+        </div>
         
           
-            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+            <div class="paper" data-aos="fade-in">
+              <div id="gitalk-container"></div>
+            </div>
+          
 
-<div id="gitalk-container"></div>
+          
+        
+      </div>
 
-<script>
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://553032651yyj.github.io//images/avatar.png?v=1620824282685" class="no-responsive avatar">
+    <div class="text-muted">啥都不会 QAQ</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://553032651yyj.github.io/post/ti-jie-luogu-2673/">题解 Luogu 2673</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://553032651yyj.github.io/post/ti-jie-sp106/">题解 SPOJ 106</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://553032651yyj.github.io/post/xue-xi-bi-ji-he-xian-ru-men-geng-xin/">学习笔记 和弦 入门（更新）</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://553032651yyj.github.io/post/bu-ke-zhuang-ya-dp-xue-xi-bi-ji/">补课 状压 DP 学习笔记</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://553032651yyj.github.io/post/mo-r75-ti-jie/">MO R7.5 题解</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://553032651yyj.github.io/post/du-sieve/">杜教筛 学习笔记</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://553032651yyj.github.io/post/Lagrange-multiplier-methods/">拉格朗日乘数法 及 例题</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://553032651yyj.github.io/post/quad-residue/">二次剩余学习笔记</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://553032651yyj.github.io/post/u145332-bounce-ti-jie/">U145332 Bounce 题解</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://553032651yyj.github.io/post/you-lian/">友链</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://553032651yyj.github.io/tag/cZnden1KU/" class="badge secondary">
+          数学
+        </a>
+      
+        <a href="https://553032651yyj.github.io/tag/aVsa9Abtj/" class="badge warning">
+          学习笔记
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Author:<a href="https://www.luogu.com.cn/user/205821" target="_blank">cvyl30</a> | <a class="rss" href="https://553032651yyj.github.io//atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
 
-  var gitalk = new Gitalk({
-    clientID: '',
-    clientSecret: '',
-    repo: '',
-    owner: '',
-    admin: [''],
-    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-    distractionFreeMode: false  // Facebook-like distraction free mode
-  })
 
-  gitalk.render('gitalk-container')
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
 
 </script>
 
-          
 
-          
-        
 
-        <div class="site-footer">
-  Author:<a href="https://www.luogu.com.cn/user/205821" target="_blank">cvyl30</a>
-  <a class="rss" href="https://553032651yyj.github.io//atom.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
-</div>
-
-      </div>
-    </div>
-
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
     <script>
-      hljs.initHighlightingOnLoad()
 
-      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: [''],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
 
-      // This should probably be throttled.
-      // Especially because it triggers during smooth scrolling.
-      // https://lodash.com/docs/4.17.10#throttle
-      // You could do like...
-      // window.addEventListener("scroll", () => {
-      //    _.throttle(doThatStuff, 100);
-      // });
-      // Only not doing it here to keep this Pen dependency-free.
-
-      window.addEventListener("scroll", event => {
-        let fromTop = window.scrollY;
-
-        mainNavLinks.forEach((link, index) => {
-          let section = document.getElementById(decodeURI(link.hash).substring(1));
-          let nextSection = null
-          if (mainNavLinks[index + 1]) {
-            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-          }
-          if (section.offsetTop <= fromTop) {
-            if (nextSection) {
-              if (nextSection.offsetTop > fromTop) {
-                link.classList.add("current");
-              } else {
-                link.classList.remove("current");    
-              }
-            } else {
-              link.classList.add("current");
-            }
-          } else {
-            link.classList.remove("current");
-          }
-        });
-      });
+      gitalk.render('gitalk-container')
 
     </script>
+  
+
+  
+
+
+
+
   </body>
 </html>

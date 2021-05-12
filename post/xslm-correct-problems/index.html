@@ -1,19 +1,14 @@
-
 <!DOCTYPE html>
 <html>
   <head>
-    
-<meta charset="utf-8" >
+    <meta charset="utf-8" >
 
 <title>XSLM 团队 题目修改情况 | cvyl30 的小站</title>
-<meta name="description" content="啥都不会 QAQ">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://553032651yyj.github.io//favicon.ico?v=1620825978886">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://553032651yyj.github.io//favicon.ico?v=1620828760865">
 <link rel="stylesheet" href="https://553032651yyj.github.io//styles/main.css">
 
 
@@ -24,81 +19,102 @@
   
 
 
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
 
 
+    <meta name="description" content="最后一次更新：2020.4.3
+前言
+
+T121985 成绩查询/【模板】RMQ问题
+作者：qym2008
+错误修改：
+第一处：输入格式，第二段，n 改为 $n$；$Ai$ 改为 $A_i$。
+备注：
+本题无难度评定，经鉴定应为 普及- 难..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://553032651yyj.github.io/">
-        <img class="avatar" src="https://553032651yyj.github.io//images/avatar.png?v=1620825978886" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://553032651yyj.github.io/">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://553032651yyj.github.io/">
+        <img src="https://553032651yyj.github.io//images/avatar.png?v=1620828760865" class="site-logo">
         <h1 class="site-title">cvyl30 的小站</h1>
       </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
     </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
-    </div>
-  </div>
-</div>
-
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
+    <div>
       
         
-          <a href="/" class="menu purple-link">
+          <a href="/" class="site-nav">
             首页
           </a>
         
       
         
-          <a href="https://www.luogu.com.cn/user/205821" class="menu purple-link">
+          <a href="https://www.luogu.com.cn/user/205821" class="site-nav">
             洛谷主页
           </a>
         
       
         
-          <a href="https://www.luogu.com.cn/blog/2018psxtdjryyj/" class="menu purple-link">
+          <a href="https://www.luogu.com.cn/blog/2018psxtdjryyj/" class="site-nav">
             洛谷博客
           </a>
         
       
         
-          <a href="https://553032651yyj.github.io/tags" class="menu purple-link">
+          <a href="https://553032651yyj.github.io/tags" class="site-nav">
             按标签查找
           </a>
         
       
         
-          <a href="https://github.com/553032651yyj/553032651yyj.github.io" class="menu purple-link">
+          <a href="https://github.com/553032651yyj/553032651yyj.github.io" class="site-nav">
             Github 仓库
           </a>
         
       
     </div>
   </div>
-</transition>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      啥都不会 QAQ
+    </div>
+    <div class="site-footer">
+      Author:<a href="https://www.luogu.com.cn/user/205821" target="_blank">cvyl30</a> | <a class="rss" href="https://553032651yyj.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
 
 
-      <div class="content-container">
-        <div class="post-detail">
-          
-          <h2 class="post-title">XSLM 团队 题目修改情况</h2>
-          <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2020-03-31</span>
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">XSLM 团队 题目修改情况</h2>
+            <div class="post-date">2020-03-31</div>
             
-          </div>
-          <div class="post-content">
-            <p>最后一次更新：2020.4.3</p>
+            <div class="post-content" v-pre>
+              <p>最后一次更新：2020.4.3</p>
 <h4 id="前言">前言</h4>
 <figure data-type="image" tabindex="1"><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1585654882560&amp;di=06e335ad7fcc57aa9c572a5f27112fed&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.shunvzhi.com%2Fuploads%2Fallimg%2F181226%2F0T23560U-0.jpg" alt="" loading="lazy"></figure>
 <h4 id="t121985-成绩查询模板rmq问题"><a href="https://www.luogu.com.cn/problem/T121985">T121985 成绩查询/【模板】RMQ问题</a></h4>
@@ -168,43 +184,28 @@
 <p><strong>本题“提示与说明”对题目有误导作用，删除。</strong></p>
 <p>本题无难度评定，经鉴定应为 <strong>普及/提高-</strong> 难度题目。原因：<strong>动态规划，有一定码量</strong>。</p>
 
+            </div>
+            
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
           </div>
+
         </div>
-
-        
       </div>
-
-      
-        
-          <div id="gitalk-container"></div>
-        
-
-        
-      
-
-      <div class="site-footer">
-  <div class="slogan">啥都不会 QAQ</div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  </div>
-  Author:<a href="https://www.luogu.com.cn/user/205821" target="_blank">cvyl30</a> | <a class="rss" href="https://553032651yyj.github.io//atom.xml" target="_blank">RSS</a>
-</div>
-
-
     </div>
-    <script type="application/javascript">
 
-hljs.initHighlightingOnLoad()
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
 
 var app = new Vue({
   el: '#app',
@@ -214,6 +215,8 @@ var app = new Vue({
 })
 
 </script>
+
+
 
 
 

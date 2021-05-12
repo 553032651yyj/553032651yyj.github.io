@@ -1,19 +1,14 @@
-
 <!DOCTYPE html>
 <html>
   <head>
-    
-<meta charset="utf-8" >
+    <meta charset="utf-8" >
 
 <title>二次剩余学习笔记 | cvyl30 的小站</title>
-<meta name="description" content="啥都不会 QAQ">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://553032651yyj.github.io//favicon.ico?v=1620825978886">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://553032651yyj.github.io//favicon.ico?v=1620828760865">
 <link rel="stylesheet" href="https://553032651yyj.github.io//styles/main.css">
 
 
@@ -24,91 +19,100 @@
   
 
 
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
 
 
+    <meta name="description" content="
+
+二次剩余 | Quadratic Residue
+求解方程 x2≡a( mod p)x^2\equiv a(\bmod p)x2≡a(modp)。
+如果该方程有正整数解，称 aaa 是 ppp 的二次剩余。以下设 ppp 是及素数。
+
+..." />
+    <meta name="keywords" content="学习笔记" />
   </head>
   <body>
     <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://553032651yyj.github.io/">
-        <img class="avatar" src="https://553032651yyj.github.io//images/avatar.png?v=1620825978886" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://553032651yyj.github.io/">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://553032651yyj.github.io/">
+        <img src="https://553032651yyj.github.io//images/avatar.png?v=1620828760865" class="site-logo">
         <h1 class="site-title">cvyl30 的小站</h1>
       </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
     </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
-    </div>
-  </div>
-</div>
-
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
+    <div>
       
         
-          <a href="/" class="menu purple-link">
+          <a href="/" class="site-nav">
             首页
           </a>
         
       
         
-          <a href="https://www.luogu.com.cn/user/205821" class="menu purple-link">
+          <a href="https://www.luogu.com.cn/user/205821" class="site-nav">
             洛谷主页
           </a>
         
       
         
-          <a href="https://www.luogu.com.cn/blog/2018psxtdjryyj/" class="menu purple-link">
+          <a href="https://www.luogu.com.cn/blog/2018psxtdjryyj/" class="site-nav">
             洛谷博客
           </a>
         
       
         
-          <a href="https://553032651yyj.github.io/tags" class="menu purple-link">
+          <a href="https://553032651yyj.github.io/tags" class="site-nav">
             按标签查找
           </a>
         
       
         
-          <a href="https://github.com/553032651yyj/553032651yyj.github.io" class="menu purple-link">
+          <a href="https://github.com/553032651yyj/553032651yyj.github.io" class="site-nav">
             Github 仓库
           </a>
         
       
     </div>
   </div>
-</transition>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      啥都不会 QAQ
+    </div>
+    <div class="site-footer">
+      Author:<a href="https://www.luogu.com.cn/user/205821" target="_blank">cvyl30</a> | <a class="rss" href="https://553032651yyj.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
 
 
-      <div class="content-container">
-        <div class="post-detail">
-          
-          <h2 class="post-title">二次剩余学习笔记</h2>
-          <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2021-01-09</span>
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">二次剩余学习笔记</h2>
+            <div class="post-date">2021-01-09</div>
             
-              <span>
-                <i class="icon-pricetags-outline"></i>
-                
-                  <a href="https://553032651yyj.github.io/tag/aVsa9Abtj/">
-                    学习笔记
-                    
-                  </a>
-                
-              </span>
-            
-          </div>
-          <div class="post-content">
-            <!-- more -->
+            <div class="post-content" v-pre>
+              <!-- more -->
 <!-- more -->
 <h3 id="二次剩余-quadratic-residue">二次剩余 | Quadratic Residue</h3>
 <p>求解方程 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>≡</mo><mi>a</mi><mo>(</mo><mtext> </mtext><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi></mrow><mtext> </mtext><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">x^2\equiv a(\bmod p)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≡</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">a</span><span class="mopen">(</span><span class="mspace" style="margin-right:0.05555555555555555em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">m</span><span class="mord mathrm">o</span><span class="mord mathrm">d</span></span></span><span class="mspace" style="margin-right:0.05555555555555555em;"></span><span class="mord mathdefault">p</span><span class="mclose">)</span></span></span></span>。</p>
@@ -191,51 +195,45 @@ int main(){
 }
 </code></pre>
 
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://553032651yyj.github.io/tag/aVsa9Abtj/" class="tag">
+                    学习笔记
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://553032651yyj.github.io/post/you-lian/">
+                  <h3 class="post-title">
+                    友链
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
           </div>
+
         </div>
-
-        
-          <div class="next-post">
-            <a class="purple-link" href="https://553032651yyj.github.io/post/you-lian/">
-              <h3 class="post-title">
-                下一篇：友链
-              </h3>
-            </a>
-          </div>
-          
       </div>
-
-      
-        
-          <div id="gitalk-container"></div>
-        
-
-        
-      
-
-      <div class="site-footer">
-  <div class="slogan">啥都不会 QAQ</div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  </div>
-  Author:<a href="https://www.luogu.com.cn/user/205821" target="_blank">cvyl30</a> | <a class="rss" href="https://553032651yyj.github.io//atom.xml" target="_blank">RSS</a>
-</div>
-
-
     </div>
-    <script type="application/javascript">
 
-hljs.initHighlightingOnLoad()
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
 
 var app = new Vue({
   el: '#app',
@@ -245,6 +243,8 @@ var app = new Vue({
 })
 
 </script>
+
+
 
 
 

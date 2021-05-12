@@ -1,181 +1,145 @@
-
 <!DOCTYPE html>
 <html>
   <head>
-    
-<meta charset="utf-8" >
+    <meta charset="utf-8" >
 
 <title>题解 | cvyl30 的小站</title>
-<meta name="description" content="啥都不会 QAQ">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://553032651yyj.github.io//favicon.ico?v=1620825978886">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://553032651yyj.github.io//favicon.ico?v=1620828760865">
 <link rel="stylesheet" href="https://553032651yyj.github.io//styles/main.css">
 
 
 
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
 
 
+    <meta name="description" content="啥都不会 QAQ">
   </head>
   <body>
     <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://553032651yyj.github.io/">
-        <img class="avatar" src="https://553032651yyj.github.io//images/avatar.png?v=1620825978886" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://553032651yyj.github.io/">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://553032651yyj.github.io/">
+        <img src="https://553032651yyj.github.io//images/avatar.png?v=1620828760865" class="site-logo">
         <h1 class="site-title">cvyl30 的小站</h1>
       </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
     </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
-    </div>
-  </div>
-</div>
-
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
+    <div>
       
         
-          <a href="/" class="menu purple-link">
+          <a href="/" class="site-nav">
             首页
           </a>
         
       
         
-          <a href="https://www.luogu.com.cn/user/205821" class="menu purple-link">
+          <a href="https://www.luogu.com.cn/user/205821" class="site-nav">
             洛谷主页
           </a>
         
       
         
-          <a href="https://www.luogu.com.cn/blog/2018psxtdjryyj/" class="menu purple-link">
+          <a href="https://www.luogu.com.cn/blog/2018psxtdjryyj/" class="site-nav">
             洛谷博客
           </a>
         
       
         
-          <a href="https://553032651yyj.github.io/tags" class="menu purple-link">
+          <a href="https://553032651yyj.github.io/tags" class="site-nav">
             按标签查找
           </a>
         
       
         
-          <a href="https://github.com/553032651yyj/553032651yyj.github.io" class="menu purple-link">
+          <a href="https://github.com/553032651yyj/553032651yyj.github.io" class="site-nav">
             Github 仓库
           </a>
         
       
     </div>
   </div>
-</transition>
-
-
-      <div class="content-container">
-
-        <div class="current-tag-container">
-          <h2 class="title">
-            <i class="icon icon-pricetags-outline"></i> 题解
-          </h2> 
-        </div>
-
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
         
-<section class="post-item">
-    <div class="content">
-      <a href="https://553032651yyj.github.io/post/mo-r75-ti-jie/">
-        <h2 class="post-title">MO R7.5 题解</h2>
-      </a>
-      <div class="post-abstract">
+      
         
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2021-01-24</span>
+      
         
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://553032651yyj.github.io/tag/-gCu9zI6uD/">
-                题解
-                
-              </a>
-            
-          </span>
+      
         
-      </div>
+      
+        
+      
     </div>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://553032651yyj.github.io/post/Solution-T129674/">
-        <h2 class="post-title">T129674 水题 题解</h2>
-      </a>
-      <div class="post-abstract">
-        
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2020-04-13</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://553032651yyj.github.io/tag/-gCu9zI6uD/">
-                题解
-                
-              </a>
-            
-          </span>
-        
-      </div>
+    <div class="site-description">
+      啥都不会 QAQ
     </div>
-    
-  </section>
-
-
-<div class="pagination-container">
-  
-  
-</div>
-
-
-      </div>
-
-      <div class="site-footer">
-  <div class="slogan">啥都不会 QAQ</div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+    <div class="site-footer">
+      Author:<a href="https://www.luogu.com.cn/user/205821" target="_blank">cvyl30</a> | <a class="rss" href="https://553032651yyj.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
-  Author:<a href="https://www.luogu.com.cn/user/205821" target="_blank">cvyl30</a> | <a class="rss" href="https://553032651yyj.github.io//atom.xml" target="_blank">RSS</a>
 </div>
 
 
-    </div>
-    <script type="application/javascript">
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <h2 class="current-tag">标签: 题解</h2>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://553032651yyj.github.io/post/mo-r75-ti-jie/">
+                  <h2 class="post-title">MO R7.5 题解</h2>
+                </a>
+                <div class="post-date">
+                  2021-01-24
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://553032651yyj.github.io/post/Solution-T129674/">
+                  <h2 class="post-title">T129674 水题 题解</h2>
+                </a>
+                <div class="post-date">
+                  2020-04-13
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+            </article>
+          
 
-hljs.initHighlightingOnLoad()
+          <div class="pagination-container">
+  
+  
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
 
 var app = new Vue({
   el: '#app',
@@ -185,6 +149,8 @@ var app = new Vue({
 })
 
 </script>
+
+
 
 
 
